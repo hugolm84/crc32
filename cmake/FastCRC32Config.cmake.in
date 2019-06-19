@@ -1,0 +1,6 @@
+get_filename_component(FastCRC32_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+include(CMakeFindDependencyMacro)
+
+if(NOT TARGET FastCRC32::FastCRC32)
+    include("${FastCRC32_CMAKE_DIR}/FastCRC32Targets.cmake")
+endif()
