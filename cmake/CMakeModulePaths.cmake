@@ -12,7 +12,5 @@ endif()
 if(EXISTS "${MODULE_PATH_DIR}/DefaultCMakeBuildSettings.cmake")
     message(STATUS "Found AppDev CMake Modules")
     set(APPDEV_CMAKE_FOUND TRUE)
-else()
-    message(FATAL_ERROR "Did not find AppDev CMake Modules in ${CMAKE_MODULE_PATH}")
 endif()
 
