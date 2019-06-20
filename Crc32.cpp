@@ -53,7 +53,8 @@
 const uint32_t Polynomial = 0xEDB88320;
 
 /// swap endianess
-static inline uint32_t swap(uint32_t x) // NOLINT(clang-diagnostic-unused-function)
+#if __BYTE_ORDER == __BIG_ENDIAN
+static inline uint32_t swap(uint32_t x)
 {
 #if defined(__GNUC__) || defined(__clang__)
   return __builtin_bswap32(x);
@@ -64,7 +65,7 @@ static inline uint32_t swap(uint32_t x) // NOLINT(clang-diagnostic-unused-functi
          (x << 24);
 #endif
 }
-
+#endif
 
 /// Slicing-By-16
 #ifdef CRC32_USE_LOOKUP_TABLE_SLICING_BY_16
